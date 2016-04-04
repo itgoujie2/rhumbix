@@ -1,0 +1,16 @@
+{
+  "name": "acunews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jie",
+  "license": "MIT", 
+  "dependencies": {
+  	"express": "^4.13.4",
+  	"body-parser": "^1.15.0", 
+    "request": "^2.69.0"
+  }
+}

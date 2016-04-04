@@ -1,0 +1,17 @@
+body{
+	padding-top: 50px;
+}
+a{
+	color: black;
+}
+#go-top-btn{
+	position: fixed;
+	bottom: 0;
+}
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+.btn-secondary-outline{
+	background-color: white;
+	border-color: black;
+}

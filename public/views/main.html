@@ -1,0 +1,53 @@
+<div class="col-lg-3 col-md-3">
+	<h3>This is news app based on the Times Newswire API</h3>
+	<hr>
+	<h5>Jie Gou</h5>
+	<button id="go-top-btn" type="button" class="btn btn-secondary-outline">Top</button>
+</div>
+
+<div class="col-lg-9 col-md-9">
+
+<treasure-overlay-spinner active="loadingNews">	
+	<div class="list-group" ng-repeat="news in newsList | filter:searchText">
+		<div class="card">
+			
+			<div class="card-block">
+
+				<div style="display: inline;">
+					<h4 class="card-title">
+						<a href="{{news.url}}" target="_blank" ng-bind-html="news.title"></a>
+					</h4>
+					<h5 style="color: grey;text-align: right;" ng-bind-html="news.published_date"></h5>
+					<h5 style="color: grey;text-align: right;" ng-bind-html="news.byline"></h5>
+				</div>
+				
+				
+				<p class="card-text" ng-bind="news.abstract"></p>
+			</div>
+		</div>
+		<hr>
+	</div>
+	<button ng-show="newsList.length > 0" ng-click="loadMore()" type="button" class="btn btn-block btn-secondary-outline">Load More</button>
+</treasure-overlay-spinner>
+</div>
+
+<script>
+	
+		$(document).ready(function(){
+
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 100) {
+					$('#go-top-btn').fadeIn();
+				} else {
+					$('#go-top-btn').fadeOut();
+				}
+			});
+			
+			$('#go-top-btn').click(function(){
+				$('html, body').animate({scrollTop : 0},800);
+				return false;
+			});
+			
+		});
+	
+</script>
