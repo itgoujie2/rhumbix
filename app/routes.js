@@ -3,23 +3,18 @@ var request = require('request');
 
 module.exports = function(app){
 
-	// app.get('*', function(req, res){
-	// 	res.redirect('/');
-	// })
+	
 
-	app.get('/news', function(req, res, next){
-		request(config.baseUrl + '/all?api-key=' + config.token, function(err, news, body){
-			// console.log(JSON.stringify(body, null, 4));
+	app.get('/gif', function(req, res, next){
+		request(config.baseUrl + 'test' + '&api_key=' + config.apiKey + '&limit=1', function(err, gif, body){
 			res.json(body);
 		})
 	})
 
-	app.get('/news/more', function(req, res, next){
-		var offset = req.query.offset;
-		console.log('offset: ' + offset);
-
-		request(config.baseUrl + '/all?api-key=' + config.token + '&offset=' + offset, function(err, news, body){
-						
+	app.get('/gif/search', function(req, res, next){
+		console.log('hitting search');
+		var searchText = req.query.query;
+		request(config.baseUrl + searchText + '&api_key=' + config.apiKey + '&limit=1', function(err, gif, body){
 			res.json(body);
 		})
 	})
