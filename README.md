@@ -1,5 +1,11 @@
 For rhumbix
 
+simply run
+# npm install
+# npm start
+
+then it will run in http://localhost:3000/
+
 
 Thank you for interviewing at Rhumbix. We have two parts to our programming interview. The first part will take most of the time. Finish part 1 before you start part 2!
 
